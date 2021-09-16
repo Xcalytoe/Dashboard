@@ -40,7 +40,7 @@ export default function Home() {
           </button>
           <Link href="/">
             <a className=" flex items-center w-24 md:w-auto">
-              <Image width={112} height={22} src="/images/patricia_logo.svg" alt="Patricia logo"/>
+              <Image width={112} height={22} src="/images/patricia-logo.svg" alt="Patricia logo"/>
             </a>
           </Link>
         </div>

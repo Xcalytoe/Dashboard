@@ -10,7 +10,7 @@ export default function Sidebar({activeMenu}) {
                 <div className={style.logo}>
                     <Link href="/">
                         <a>
-                            <Image width={112} height={22} src="/images/patricia_logo.svg" alt="Patricia logo"/>
+                            <Image width={112} height={22} src="/images/patricia-logo.svg" alt="Patricia logo"/>
                         </a>
                     </Link>
                 </div>
