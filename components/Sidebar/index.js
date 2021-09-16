@@ -16,7 +16,7 @@ export default function Sidebar({activeMenu}) {
                 </div>
                 <nav>
                     <ul>
-                        <li className={style.sidebarContainer__list}>
+                        <li className={style.sidebarContainer__list}> 
                             <Link href="/">
                             <a className="flex items-center ">
                                 <svg className="inline-block" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
