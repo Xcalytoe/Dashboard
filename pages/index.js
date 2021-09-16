@@ -87,7 +87,7 @@ export default function Home() {
                 </div>
               </div>
             </div>
-            {/* <AccountBalance/> */}
+            <AccountBalance/>
             <div className="request-money flex items-center">
               <Link href="/">
                 <a className="request-money__link flex justify-between items-center">

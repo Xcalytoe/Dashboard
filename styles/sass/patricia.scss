@@ -734,6 +734,238 @@ a:hover {
     }
 
 }
+
+// cards page 
+.page-main-content{
+    .underline{
+     @include border(1px solid #EFF2F7);
+     margin: 35px 0 35px -32px;
+     }
+     &__btn{
+         margin-top: 19px;
+         a{
+             margin-right: 16px;
+             @include transition(all 0.3s);
+             position: relative;
+             left:0;
+            
+             &:hover{
+                 @include transition(all 0.3s);
+                 left:- 3px;
+             }
+             &:focus{
+                 @include border(none);
+                 @include outline(none);
+                 @include box-shadow(none);
+             }
+         }
+         h4{
+             font-style: normal;
+             font-weight: 600;
+             font-size: 32px;
+             line-height: 42px;
+             color: #9DA8B6;
+         }
+     }
+ }
+ // side content 
+ .card-page-side{
+     background: #F9FAFC;
+     padding-left: 24px;
+     padding-right: 32px;
+     flex-basis: 287px;
+     flex-grow: 1;
+     .page-side-content{
+         background: white;
+ 
+     }
+     .card-activity{
+        background: #FFFFFF;
+        @include border (1px solid #EFF2F7);
+        @include border-radius (24px); 
+        padding: 24px;
+        &__header{
+            p{
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 24px;
+                color: #9DA8B6;  
+            }
+            margin-bottom: 24px;
+        }
+        &__download{
+            margin-left: 8px;
+            button{
+                background: none;
+                @include border(none);
+                &:focus{
+                @include border(none);
+                @include outline(none);
+                @include box-shadow(none);
+                }
+            }
+        }
+        &__date{
+    
+            label{
+                position: relative;
+                min-width: 115px;
+                padding-left: 32px;
+                z-index: 1;
+                &:after{
+                    position: absolute;
+                    content:"";
+                    width:100%;
+                    background: #F9FAFC;
+                    height: 100%;
+                    z-index: -1;
+                    left:0;
+                    top:0;
+                    @include border-radius (8px 0 0 8px);
+                }
+                span{
+                    font-style: normal;
+                    font-weight: normal;
+                    font-size: 12px;
+                    line-height: 20px;
+                    color: #9DA8B6;
+                }
+            }
+            input{
+                font-style: normal;
+                font-weight: normal;
+                font-size: 12px;
+                line-height: 20px;
+                color: #9DA8B6;
+                @include border(none);
+                background: #F9FAFC;
+                @include border-radius (0 8px 8px 0);
+    
+                &:focus{
+                @include border(none);
+                @include outline(none);
+                @include box-shadow(none);
+                    
+                }
+    
+                &::-webkit-calendar-picker-indicator { 
+                    position: absolute;
+                    left: -15px; 
+                    background: url("../../public/images/date_picker.svg")  0% 50% no-repeat ;
+                    cursor: pointer;
+                }
+                &::-webkit-datetime-edit { 
+                    position: relative; 
+                    left: 0; 
+                }
+                
+                &::-webkit-datetime-edit-fields-wrapper { 
+                    position: relative; 
+                    left: 0; 
+                }
+            }
+        }
+        &__items{
+            background: #fff;
+            margin-bottom: 32px;
+            padding: 4px 0;
+            @include transition(all 0.3s);
+            &:hover{
+                @include transition(all 0.3s);
+                // @include box-shadow (0px 4px 36px rgba(0, 0, 0, 0.05));
+                @include border-radius (8px); 
+            }
+        }
+        &__amount{
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 24px;
+            color: #9DA8B6; 
+        }
+        &__name{
+            p{
+                font-style: normal;
+                font-weight: normal;
+                font-size: 14px;
+                line-height: 14px;
+                color: #575A65; 
+                padding: 0;
+                margin: 0;
+            }
+            .time{
+                padding: 0;
+                margin: 0;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 12px;
+                line-height: 12px;
+                color: #9DA8B6; 
+                display: inline-block;
+
+            }
+            .img{
+                margin-right: 16px;
+            }
+        }
+     }
+ }
+ .dashboard-container{
+     &__cards{
+         padding-right: 0;
+         column-gap: 0;
+     }
+ }
+ .virtual-card{
+     padding-right: 32px;
+     &__create{
+         margin-top: 49px;
+         margin-bottom: 27px;
+         button{
+             cursor: pointer;
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 28px;
+            color: #1D1E2C; 
+            background: #FFCE00;
+            @include border-radius ( 8px);
+            padding:4px 24px;
+            max-height: 40px; 
+            margin-top: 2px;
+            margin-bottom: 2px;
+            @include border(1px solid #FFCE00);
+            @include transition(all 0.3s);
+            &:hover{
+                background: hsl(48, 100%, 80%);
+                @include transition(all 0.3s);
+
+            }
+            &:focus{
+                background: hsl(48, 90%, 60%);
+                @include transition(all 0.3s);
+                @include box-shadow(none);
+                @include outline(none);
+            }
+         }
+         p{
+            font-style: normal;
+            font-weight: 600;
+            font-size: 20px;
+            line-height: 28px;
+            color: #444854;  
+         }
+         span{
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 24px;
+            color: #9DA8B6; 
+         }
+     }
+ }
+
 // mobile menu 
 .close-overlay, .mobile-menu{display:none}
 
