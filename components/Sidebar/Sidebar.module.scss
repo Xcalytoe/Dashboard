@@ -1,0 +1,75 @@
+@import "../../styles/sass/patricia_mixins";
+.sidebarContainer{
+    @include border-right(1px solid #EFF2F7);
+    position: fixed;
+    top:0;
+    height: 100%;
+    max-width: 217px;
+    width:100%;
+    nav{
+        overflow-y: scroll;
+        overflow-x: unset;
+        height: calc(100vh - 80px);
+    }
+    .logo{
+        padding-left: 49px;
+        padding-top: 26px;
+        margin-top: 24px;
+    }
+    ul{
+        margin-top: 106px;
+    }
+    &__list{
+        width: calc(100% - 25px);
+        padding-bottom: 4px;
+        padding-top: 4px;
+        a{
+            padding-top: 12px;
+            padding-bottom: 12px;
+            padding-left: 49px;
+            svg{
+                margin-right: 20px;
+            }
+            font-style: normal;
+            font-weight: normal;
+            font-size: 14px;
+            line-height: 24px;
+            color: #979AA5; 
+            @include border-radius (0 8px 8px 0); 
+            @include transition(all 0.3s);
+            &:hover{
+                @include transition(all 0.3s);
+                background: hsl(48, 100%, 95%);
+                color: hsl(227, 7%, 52%);
+            }
+        }
+        &_active{
+            a{
+                background: #FFEEA7 !important;
+                // @include border-radius (0 8px 8px 0); 
+                color: #006156 !important;
+                svg path{
+                   fill: #006156 !important; 
+                }
+            }
+        }
+
+    }
+}
+// media query 
+@media only screen and (max-width:991px){
+    .mobile-menu{
+        display: -webkit-flex;
+        display: flex;
+    }
+ .showSidebar{
+     display: block;
+     .sidebarContainer{
+         z-index: 100;
+         background: #fff;
+     }
+ }
+ .hideSidebar{
+     display:none;
+ }
+}
