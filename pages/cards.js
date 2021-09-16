@@ -93,10 +93,43 @@ export default function Cards() {
                 </div>
                 <button>Create New Card</button>
               </div>
+              <div className="virtual-card__select">
+                  {/* <Image width={312} height={204} src="/images/card2.svg"/>
+                  <Image width={265} height={173} src="/images/card1.svg"/> */}
+              </div>
+              <div className="virtual-card__details  flex justify-between wrap">
+                <div className="virtual-card__details__content">
+                  <div className="virtual-card__details__item grid justify-between">
+                    <p>Card Balance:</p>
+                    <p className="amount">$3000.73</p>
+                  </div>
+                  <div className="virtual-card__details__item grid justify-between">
+                    <p>Name:</p>
+                    <p className="value">Netflix Card</p>
+                  </div>
+                  <div className="virtual-card__details__item grid justify-between">
+                    <p>Card Status:</p>
+                    <p className="value">Active</p>
+                  </div>
+                  <div className="virtual-card__details__item grid justify-between">
+                    <p>Billing Address:</p>
+                    <p className="value">Patricia HQ, SA 109827
+                      <svg className="inline-block ml-2" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M3 8.75C3 5.57 5.57 3 8.75 3H15.76C16.17 3 16.51 3.34 16.51 3.75C16.51 4.16 16.17 4.5 15.76 4.5H8.75C6.4 4.5 4.5 6.4 4.5 8.75V15.86C4.5 16.27 4.16 16.61 3.75 16.61C3.34 16.61 3 16.27 3 15.86V8.75Z" fill="#9DA8B6"/>
+                        <path d="M18.1502 6.53999C14.9102 6.17999 11.5902 6.17999 8.34016 6.53999C7.42016 6.64999 6.68016 7.36999 6.57016 8.29999C6.19016 11.59 6.19016 14.91 6.57016 18.19C6.68016 19.12 7.42016 19.85 8.34016 19.95C11.5802 20.31 14.9002 20.31 18.1502 19.95C19.0702 19.85 19.8202 19.12 19.9202 18.19C20.3002 14.9 20.3002 11.58 19.9202 8.29999C19.8202 7.36999 19.0802 6.64999 18.1502 6.53999Z" fill="#9DA8B6"/>
+                      </svg>
+                    </p>
+                  </div>
+                  <div className="virtual-card__details__item grid justify-between">
+                    <p>Date Created:</p>
+                    <p className="value">March 3rd 2020, 9:48:36 am</p>
+                  </div>
+                </div>
+                <div className="virtual-card__fund">
+                  <button>Fund Card</button>
+                </div>
+              </div>
             </div>
-    
-            {/* recent activities  */}
-            <RecentActivity/>
           </div>
           <div className="card-page-side">
             <div className="page-side-content">

@@ -933,8 +933,8 @@ a:hover {
             @include border-radius ( 8px);
             padding:4px 24px;
             max-height: 40px; 
-            margin-top: 2px;
-            margin-bottom: 2px;
+            margin-top: 8px;
+            margin-bottom: 9px;
             @include border(1px solid #FFCE00);
             @include transition(all 0.3s);
             &:hover{
@@ -963,7 +963,72 @@ a:hover {
             line-height: 24px;
             color: #9DA8B6; 
          }
-     }
+    }
+    &__details{
+        background: #F9FAFC;
+        @include border-radius (24px); 
+        padding: 24px;
+        column-gap: 10px;
+        row-gap: 24px;
+        &__content{
+            flex-basis: 300px;
+            flex-grow: 1;
+        }
+        &__item{
+            margin-bottom: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+            // grid-template-columns: 200px 1fr;
+            column-gap: 10px;
+            &:last-of-type{margin-bottom: 0;}
+           p{
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 20px;
+            color: #9DA8B6; 
+            flex-grow: 1;
+            &.amount{
+                color: #006156;
+                flex-grow: 2;
+            }
+            &.value{
+                color: #575A65; 
+                flex-grow: 2;
+            }
+
+           } 
+        }
+    }
+    &__fund{
+        flex-basis: 128px;
+        text-align: center;
+        button{
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 28px;
+            color: #006156; 
+            background: #fff;
+            @include border (1px solid #006156);
+            @include border-radius (8px); 
+            @include transition(all 0.3s);
+            max-height: 40px;
+            padding: 4px 18px;
+            &:hover{
+                background: #006156;
+                color:#fff;
+                @include transition(all 0.3s);
+
+            }
+            &:focus{
+                background: hsl(173, 100%, 29%);
+                @include transition(all 0.3s);
+                color:#fff;
+                @include box-shadow(none);
+                @include outline(none);
+            }
+        }
+    }
  }
 
 // mobile menu 
@@ -986,6 +1051,9 @@ a:hover {
         @include border(none);
         right: auto; 
     }
+    .virtual-card {
+        padding-right: 0;
+    }
     .balance{
         max-width: 684px;
         width: 100%;
@@ -998,9 +1066,20 @@ a:hover {
     }
     .page-main-content{margin-bottom: 0;}
     .page-side-content{margin-top: 0px;}
+    .page-main-content .underline {
+        margin: 35px 0 ;
+    }
+    .dashboard-container__cards{
+        column-gap: 32px;
+    }
+    .card-page-side {
+        flex-basis: 370px;
+        background: #fff;
+    }
 }
 
 @media only screen and (max-width:1024px){
+   
     .activity{
         &__items{
             @include border(1px solid hsl(218, 33%, 96%));
@@ -1039,6 +1118,7 @@ a:hover {
         position: sticky;
         right:auto;
         top:0;
+        @include transition (all 0.3);
         // padding-right: 32px;
         padding: 15px 20px;
         z-index: 99;
@@ -1047,6 +1127,7 @@ a:hover {
     .mobile-menu{
         display: -webkit-flex;
         display: flex;
+        @include transition (all 0.3);
         button{
             margin-right: 20px;
         }
@@ -1055,6 +1136,7 @@ a:hover {
         position: relative;
     }
     .close-overlay.overlay-button{
+        @include transition (all 0.3);
         display: block;
         position: absolute;
         left:0;
@@ -1100,6 +1182,11 @@ a:hover {
     }
 }
 @media only screen and (max-width:420px){
+    .card-page-side {
+        padding-left: 0;
+        padding-right: 0;
+        flex-basis: 287px;
+    }
     .balance{
        
         &__chart{
@@ -1119,6 +1206,9 @@ a:hover {
     }
 }
 @media only screen and (max-width:375px){
+    .card-page-side .card-activity {
+        padding: 24px 15px;
+    }
     .balance{
         &__chart__container{
             flex-wrap: wrap;
