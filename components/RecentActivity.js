@@ -26,7 +26,7 @@ export default function RecentActivity() {
                 <li className="activity__items grid justify-between items-center">
                     <div className="activity__name flex wrap items-center">
                         <Image className="img" src="/images/naira.svg" width={40} height={40} alt="Naira icon"/>
-                        <p>Self Withdrawal</p>
+                        <p>Withdrawal</p>
                     </div>
                     <div className="activity__amount">
                         <p className="amount">0.003 BTC</p>
