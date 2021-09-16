@@ -8,7 +8,7 @@ import RecentActivity from '../components/RecentActivity'
 import Link from "next/link";
  
 
-export default function Home() {
+export default function Cards() {
   const [ activeMenu, setActiveMenu ] = useState(false);
   const handleMenu = () => {
     setActiveMenu(!activeMenu);

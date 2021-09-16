@@ -62,14 +62,14 @@ export default function AccountBalance() {
     setChartType(value);
   }
     return (
-        <div className="balance flex">
+        <div className="balance flex wrap">
             <div className="balance__amount grid align-center">
                 <h6>Total Balance</h6>
                 <p className="balance__amount__amount">₦89,153,001.73</p>
                 <p className="balance__amount__booked">Book Balance: ₦450,000.093</p>
             </div>
             <div className="balance__chart">
-                <div className="flex items-center">
+                <div className="flex items-center balance__chart__container">
                     <div className="flex-grow md:mr-3">
                         <div className="balance__chart__buttons flex justify-between">
                             <label className={chartType === "Today" ? "balance__chart__buttons--active" : ""}>

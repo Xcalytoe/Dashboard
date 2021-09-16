@@ -13,6 +13,7 @@ export default function DepositTabs() {
 
                 <TabPanel className="deposit-tab__content">
                     <h4>Select a method to Fund Naira wallet below</h4>
+                  <div className="deposit-tab__content__container grid">
                     <Link href="/">
                         <a className="deposit-tab__content__link flex justify-between items-center">
                             <div className="flex items-center">
@@ -77,8 +78,9 @@ export default function DepositTabs() {
                             </svg>
                         </a>
                     </Link>
+                  </div>
                 </TabPanel>
-                <TabPanel className="deposit-tab__content">
+                <TabPanel className="deposit-tab__content hh">
                     <h4>Content of Transfer</h4>
                 </TabPanel>
             </Tabs>

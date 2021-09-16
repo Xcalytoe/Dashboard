@@ -4,11 +4,11 @@ import Image from 'next/image';
 export default function RecentActivity() {
     return (
         <div className="activity">
-            <div className="activity__header flex justify-between items-center">
+            <div className="activity__header flex justify-between items-center wrap">
                 <p>Recent Activity</p>
                 <div className="activity__date flex items-center">
                     <label className="flex items-center">
-                        <span>Start date: &nbsp;</span>
+                        <span className="inline-block">Start date:</span>&nbsp;
                         <input type="date" />
                     </label>
                     <div className="activity__download flex items-center">

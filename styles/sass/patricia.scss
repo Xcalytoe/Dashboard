@@ -156,7 +156,14 @@ a:hover {
         }
     }
 }
-
+.nav-container {
+    justify-content: flex-end;
+    position: absolute;
+    right:0;
+    padding-right: 32px;
+    padding-left: 32px;
+    padding-top: 40px;
+}
 .dashboard-container{
     grid-template-columns: 217px 1fr;
     min-height: 100vh;
@@ -171,6 +178,7 @@ a:hover {
     &-main-content{
         flex-basis: 600px;
         flex-basis: 550px;
+        flex-basis: 510px;
         flex-grow: 1;
         margin: 24px 0;
         position: relative;
@@ -224,6 +232,7 @@ a:hover {
         flex-grow: 1;
         flex-basis: 380px;
         flex-basis: 295px;
+        flex-basis: 230px;
         margin: 24px 0;
         margin-top: 168px;
 
@@ -235,6 +244,7 @@ a:hover {
     margin-top: 26px;
     margin-bottom: 40px;
     position: relative;
+    max-width: 684px;
     &:before{
         position: absolute;
         position: absolute;
@@ -408,7 +418,9 @@ a:hover {
         }
     }
     &__content{
-        padding: 32px 24px;
+        padding: 0 24px;
+        margin-bottom: 32px;
+        margin-top: 32px;
         h4{
             font-style: normal;
             font-weight: bold;
@@ -420,6 +432,12 @@ a:hover {
             margin: auto;
             margin-bottom: 32px;
         }
+        &__container{
+            grid-template-columns: repeat(auto-fit, minmax( 300px, 1fr) );
+            column-gap: 24px;
+            row-gap: 24px;
+
+        }
         &__link{
             background: #FFFFFF;
             @include border (1px solid #F9FAFC);
@@ -427,7 +445,6 @@ a:hover {
             @include transition(all 0.3s);
             padding: 30px;
             position: relative;
-            margin: 24px 0;
             &:hover{
                 @include transition(all 0.3s);
                 p{
@@ -521,6 +538,7 @@ a:hover {
     column-gap: 24px;
     row-gap: 15px;
     margin-bottom: 15px;
+    margin-bottom: 20px;
     &__link{
         background: #FFFFFF;
         @include border (1px solid #EFF2F7);
@@ -648,8 +666,9 @@ a:hover {
     }
     &__items{
         grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
-        grid-template-columns: 200px 1fr 1fr 1fr;
+        grid-template-columns: 185px 1fr 1fr 1fr;
         column-gap: 22px;
+        column-gap: 15px;
         row-gap: 15px;
         background: #fff;
         margin-bottom: 24px;
@@ -719,7 +738,80 @@ a:hover {
 .close-overlay, .mobile-menu{display:none}
 
 // media query 
+@media only screen and (min-width:1340px){
+    .balance{
+        max-width: auto;
+    }
+}
+@media only screen and (max-width:1310px){
+    .balance{
+        max-width: 550px;
+    }
+}
+@media only screen and (max-width:1188px){
+    .page-main-content:before{
+        height: auto;
+        @include border(none);
+        right: auto; 
+    }
+    .balance{
+        max-width: 684px;
+        width: 100%;
+    }
+    .dashboard-container__main {
+        padding: 0 32px;
+        -moz-column-gap: 48px;
+        column-gap: 48px;
+        row-gap: 24px;
+    }
+    .page-main-content{margin-bottom: 0;}
+    .page-side-content{margin-top: 0px;}
+}
+
+@media only screen and (max-width:1024px){
+    .activity{
+        &__items{
+            @include border(1px solid hsl(218, 33%, 96%));
+            @include border-radius (10px);
+            padding: 6px;
+            row-gap: 0px;
+            grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+        }
+    }
+}
 @media only screen and (max-width:991px){
+    .activity{
+        padding: 14px;
+
+        &__items{
+            column-gap: 10px;
+
+        }
+        &__name{
+            row-gap: 4px;
+            p{
+                text-align: left;
+                padding: 0;
+            }
+        }
+        &__amount p,&__status{
+            // text-align: left;
+            // text-align: center;
+            display: flex;
+            justify-self: baseline;
+        }
+    }
+    .nav-container {
+        justify-content: space-between;
+        position: -webkit-sticky;
+        position: sticky;
+        right:auto;
+        top:0;
+        // padding-right: 32px;
+        padding: 15px 20px;
+        z-index: 99;
+        background: white;
+    }
     .mobile-menu{
         display: -webkit-flex;
         display: flex;
@@ -727,17 +819,112 @@ a:hover {
             margin-right: 20px;
         }
     }
+    body{
+        position: relative;
+    }
     .close-overlay.overlay-button{
         display: block;
         position: absolute;
         left:0;
         top:0;
         width: 100%;
-        height: 100%;
+        height: 200%;
         background: hsla(173, 40%, 19%, 0.5);
-        z-index: 10;
+        z-index: 100;
     }
     .dashboard-container {
         grid-template-columns: 1fr;
+    }
+}
+@media only screen and (max-width:767px){
+    .request-money{
+        margin: auto;
+        max-width: calc(100vw - 40px);
+        overflow-y: hidden;
+        overflow-x: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+        &::-webkit-scrollbar{display: none;}
+    }
+    .activity{
+        margin-top: 20px;
+    }
+}
+@media only screen and (max-width:500px){
+    .balance__chart {
+        flex-basis: 270px;
+    }
+    .dashboard-container{
+        &__main {
+            padding: 0 20px;
+        }
+    }
+    .page-main-content{
+        margin-top: 0;
+        &__header h4 {
+            font-size: 28px;
+            line-height: 36px;
+        }
+    }
+}
+@media only screen and (max-width:420px){
+    .balance{
+       
+        &__chart{
+            &__container{
+                flex-wrap: wrap;
+                -ms-flex-wrap: wrap;
+            }
+            .line-chart {
+                min-height: 112px;
+                max-width: calc(100vw - 72px);
+            }
+        }
+        &__inflow{
+            padding-top: 4px;
+            flex-grow: 1;
+        }
+    }
+}
+@media only screen and (max-width:375px){
+    .balance{
+        &__chart__container{
+            flex-wrap: wrap;
+            -ms-flex-wrap: wrap;
+        }
+    }
+    .deposit-tab{
+        &__title{
+            padding: 14px 8px;
+        }
+        &__content {
+            padding: 32px 10px;
+            &__container {
+                grid-template-columns: repeat(auto-fit, minmax(209px, 1fr));
+            }
+            &__link{
+                padding: 30px 15px;
+            }
+        }
+    }
+   
+    .activity{
+        &__items{
+            column-gap: 15px;
+
+        }
+        &__name{
+            row-gap: 4px;
+            p{
+               font-size: 13px;
+               line-height: 18px;
+            }
+        }
+        &__amount p,&__status{
+            font-size: 13px;
+            line-height: 18px;
+            margin-top: 2px;
+            margin-bottom: 2px;
+        }
     }
 }
