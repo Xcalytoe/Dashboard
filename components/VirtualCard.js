@@ -51,7 +51,7 @@ export default function VirtualCard() {
                         </button>
                     </div>
                 </div>
-                <Image width={265} height={173} src="/images/card1.svg"/>
+                {/* <Image width={265} height={173} src="/images/card1.svg"/> */}
 
             </div>
             <div className="virtual-card__action flex flex-wrap">
