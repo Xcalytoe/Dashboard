@@ -65,12 +65,36 @@
     }
  .showSidebar{
      display: block;
+
      .sidebarContainer{
          z-index: 102;
          background: #fff;
+        animation: drop_out 0.2s ease-in;
+
      }
  }
  .hideSidebar{
      display:none;
+     animation: drop_in 0.25s ease-in;
  }
+}
+@keyframes drop_in{
+    100%{
+        opacity:0;
+        transform: translate(0, 0);
+    }
+    0%{
+        opacity:1;
+        transform: translate(1px, 0);
+    }
+}
+@keyframes drop_out{
+    100%{
+        opacity:1;
+        transform: translate(1px, 0);
+    }
+    0%{
+        opacity:0.6;
+        transform: translate(0, 0);
+    }
 }

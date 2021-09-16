@@ -8,6 +8,7 @@ import RecentActivity from '../components/RecentActivity'
 import Link from "next/link";
 import BackBtn from '../components/BackBtn';
 import CardActivities from '../components/CardActivities';
+import VirtualCard from '../components/VirtualCard';
  
 
 export default function Cards() {
@@ -18,6 +19,7 @@ export default function Cards() {
   const closeMenu = () => {
     setActiveMenu(false);
   }
+ 
   useEffect(() => {
     if (activeMenu) {
         // Disable scroll for inner page
@@ -94,8 +96,8 @@ export default function Cards() {
                 <button>Create New Card</button>
               </div>
               <div className="virtual-card__select">
-                  {/* <Image width={312} height={204} src="/images/card2.svg"/>
-                  <Image width={265} height={173} src="/images/card1.svg"/> */}
+                {/* virtual card  */}
+                <VirtualCard/>
               </div>
               <div className="virtual-card__details  flex justify-between wrap">
                 <div className="virtual-card__details__content">

@@ -919,6 +919,129 @@ a:hover {
  }
  .virtual-card{
      padding-right: 32px;
+     &__user-detail{
+         position: relative;
+         max-width: 312px;
+         max-height: 204px;
+         .card-number{
+             position: absolute;
+             padding-left: 30px;
+             padding-right: 30px;
+             top: 50%;
+             left: 50%;
+             width: 100%;
+             @include transform(translate(-50%, -50%));
+             span{
+                 color: #fff;
+                 font-size: 14px;
+             }
+         }
+         .card-amount{
+            position: absolute;
+            bottom: 53px;
+            left: 53px;
+            span{
+                color: #fff;
+                font-size: 12px;
+            }
+         }
+         .card-name{
+            position: absolute;
+            bottom: 11px;
+            left: 21px;
+            span{
+                color: #fff;
+                font-size: 10.5px;
+            }
+         }
+         .card-year{
+            position: absolute;
+            bottom: 20px;
+            left: 136px;
+            span{
+                color: #fff;
+                font-size: 8px;
+            }
+         }
+         .card-day{
+            position: absolute;
+            bottom: 16px;
+            left: 116px;
+            span{
+                color: #fff;
+                font-size: 8px;
+            }
+         }
+         .card-cvv{
+            position: absolute;
+            bottom: 21px;
+            left: 195px;
+            span{
+                color: #fff;
+                font-size: 8px;
+            }
+         }
+         .card-toggle{
+            position: absolute;
+            top:20px;
+            right:20px;
+            button{
+                cursor: pointer;
+            }
+         }
+     }
+     &__action{
+         margin-top: 24px;
+         margin-bottom: 48px;
+         column-gap: 20px;
+         row-gap: 10px;
+         button{
+            font-style: normal;
+            font-weight: normal;
+            font-size: 16px;
+            line-height: 28px;
+            height: 40px;
+            @include border-radius (8px);
+            background: #fff;
+            padding-left: 22px;
+            padding-right: 22px;
+            @include transition(all 0.3s);
+
+            &.freeze{
+                color: #006156; 
+                @include border(1px solid hsl(173, 100%, 19%));
+                &:hover{
+                    background: hsl(173, 100%, 90%);
+                    @include transition(all 0.3s);
+    
+                }
+                &:focus{
+                    background: hsl(173, 100%, 29%);
+                    color: hsl(173, 100%, 98%);
+                    @include transition(all 0.3s);
+                    @include box-shadow(none);
+                    @include outline(none);
+                }
+            }
+            &.delete{
+                color: #CC4945;
+                @include border(1px solid #CC4945);
+                &:hover{
+                    background: hsl(2, 57%, 84%);
+
+                    @include transition(all 0.3s);
+    
+                }
+                &:focus{
+                    background: hsl(2, 57%, 54%);
+                    color: hsl(2, 57%, 94%);
+                    @include transition(all 0.3s);
+                    @include box-shadow(none);
+                    @include outline(none);
+                }
+            }
+         }
+     }
      &__create{
          margin-top: 49px;
          margin-bottom: 27px;
@@ -1206,6 +1329,30 @@ a:hover {
     }
 }
 @media only screen and (max-width:375px){
+    .virtual-card__user-detail {
+        max-width: 278px;
+        max-height: 181px;
+        .card-amount {
+            bottom: 47px;
+            left: 47px;
+        }
+        .card-cvv {
+            bottom: 18px;
+            left: 175px;
+        }
+        .card-year {
+            bottom: 18px;
+            left: 118px;
+        }
+        .card-day {
+            bottom: 13px;
+            left: 102px;
+        }
+    }
+    .virtual-card__action button {
+        font-size: 14px;
+        line-height: 26px;
+    }
     .card-page-side .card-activity {
         padding: 24px 15px;
     }
@@ -1250,3 +1397,4 @@ a:hover {
         }
     }
 }
+
