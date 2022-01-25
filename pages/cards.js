@@ -1,31 +1,30 @@
-import React, { useState, useEffect } from 'react';
-import Head from 'next/head'
-import Image from 'next/image'
-import Aside from '../components/Sidebar'
-import DepositTabs from '../components/DepositTabs'
-import AccountBalance from '../components/AccountBalance';
-import RecentActivity from '../components/RecentActivity'
+import React, { useState, useEffect } from "react";
+import Head from "next/head";
+import Image from "next/image";
+import Aside from "../components/Sidebar";
+import DepositTabs from "../components/DepositTabs";
+import AccountBalance from "../components/AccountBalance";
+import RecentActivity from "../components/RecentActivity";
 import Link from "next/link";
-import BackBtn from '../components/BackBtn';
-import CardActivities from '../components/CardActivities';
-import VirtualCard from '../components/VirtualCard';
- 
+import BackBtn from "../components/BackBtn";
+import CardActivities from "../components/CardActivities";
+import VirtualCard from "../components/VirtualCard";
 
 export default function Cards() {
-  const [ activeMenu, setActiveMenu ] = useState(false);
+  const [activeMenu, setActiveMenu] = useState(false);
   const handleMenu = () => {
     setActiveMenu(!activeMenu);
-  }
+  };
   const closeMenu = () => {
     setActiveMenu(false);
-  }
- 
+  };
+
   useEffect(() => {
     if (activeMenu) {
-        // Disable scroll for inner page
-        document.body.style.overflow = 'hidden';
-    }else{
-        document.body.style.overflow = 'unset';
+      // Disable scroll for inner page
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
     }
   }, [activeMenu]);
   return (
@@ -36,39 +35,73 @@ export default function Cards() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* mobile menu close button */}
-      <button className={`close-overlay ${activeMenu ? "overlay-button" :""}`} onClick={closeMenu}></button>
+      <button
+        className={`close-overlay ${activeMenu ? "overlay-button" : ""}`}
+        onClick={closeMenu}
+      ></button>
       <div className=" nav-container flex justify-between items-center">
         <div className="flex items-center mobile-menu">
           <button onClick={handleMenu} className=" flex items-center">
-            <Image width={35} height={35} src="/images/menu.svg" alt="Mobile menu"/>
+            <Image
+              width={35}
+              height={35}
+              src="/images/menu.svg"
+              alt="Mobile menu"
+            />
           </button>
           <Link href="/">
             <a className=" flex items-center w-24 md:w-auto">
-              <Image width={112} height={22} src="/images/patricia_logo.svg" alt="Patricia logo"/>
+              <Image
+                width={112}
+                height={22}
+                src="/images/patricia_logo.svg"
+                alt="Patricia logo"
+              />
             </a>
           </Link>
         </div>
         <div className="flex items-center profile-container">
           <div className=" flex items-center mr-2 ms:mr-5">
-            <Image src="/images/notification.svg" width={32} height={32} alt="Notification"/>
+            <Image
+              src="/images/notification.svg"
+              width={32}
+              height={32}
+              alt="Notification"
+            />
           </div>
-          <div  className="profile-container__user flex items-center mr-2">
-            <Image src="/images/profile.png" width={26} height={26} alt="Profile"/>
+          <div className="profile-container__user flex items-center mr-2">
+            <Image
+              src="/images/profile.png"
+              width={26}
+              height={26}
+              alt="Profile"
+            />
           </div>
           <button>
-            <svg width="4" height="18" viewBox="0 0 4 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path fillRule="evenodd" clipRule="evenodd" d="M2 4C3.104 4 4 3.104 4 2C4 0.896 3.104 0 2 0C0.896 0 0 0.896 0 2C0 3.104 0.896 4 2 4ZM2 7C0.896 7 0 7.896 0 9C0 10.104 0.896 11 2 11C3.104 11 4 10.104 4 9C4 7.896 3.104 7 2 7ZM0 16C0 14.896 0.896 14 2 14C3.104 14 4 14.896 4 16C4 17.104 3.104 18 2 18C0.896 18 0 17.104 0 16Z" fill="#9DA8B6"/>
+            <svg
+              width="4"
+              height="18"
+              viewBox="0 0 4 18"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                fillRule="evenodd"
+                clipRule="evenodd"
+                d="M2 4C3.104 4 4 3.104 4 2C4 0.896 3.104 0 2 0C0.896 0 0 0.896 0 2C0 3.104 0.896 4 2 4ZM2 7C0.896 7 0 7.896 0 9C0 10.104 0.896 11 2 11C3.104 11 4 10.104 4 9C4 7.896 3.104 7 2 7ZM0 16C0 14.896 0.896 14 2 14C3.104 14 4 14.896 4 16C4 17.104 3.104 18 2 18C0.896 18 0 17.104 0 16Z"
+                fill="#9DA8B6"
+              />
             </svg>
           </button>
         </div>
       </div>
       <div className="dashboard-container grid ">
         {/* side bar  */}
-        <Aside activeMenu={activeMenu}/>
+        <Aside activeMenu={activeMenu} />
         <main className="dashboard-container__main dashboard-container__cards flex wrap">
-          <div className="page-main-content" >
+          <div className="page-main-content">
             <div className="page-main-content__btn flex items-center">
-              <BackBtn/>
+              <BackBtn />
               <h4>Cards</h4>
             </div>
             <div className="underline"></div>
@@ -76,19 +109,48 @@ export default function Cards() {
               <div className="virtual-card__create flex justify-between wrap">
                 <div className="flex items-center">
                   <div className="flex items-center mr-3">
-                    <Image src="/images/card-icon.svg" width={40} height={40} alt="card icon"/>
+                    <Image
+                      src="/images/card-icon.svg"
+                      width={40}
+                      height={40}
+                      alt="card icon"
+                    />
                   </div>
                   <div>
-                    <p>Virtual Card
-                      <svg className="ml-4 inline-block" width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path fillRule="evenodd" clipRule="evenodd" d="M7.9996 10.7312L4.234 6.96558L5.3652 5.83438L7.9996 8.46878L10.634 5.83438L11.7652 6.96558L7.9996 10.7312ZM7.99961 1.59998C4.46521 1.59998 1.59961 4.46478 1.59961 7.99998C1.59961 11.5344 4.46521 14.4 7.99961 14.4C11.534 14.4 14.3996 11.5344 14.3996 7.99998C14.3996 4.46478 11.534 1.59998 7.99961 1.59998Z" fill="#C0CCDA"/>
-                        <mask id="mask0" style={{maskType:"alpha"}} maskUnits="userSpaceOnUse" x="1" y="1" width="14" height="14">
-                        <path fillRule="evenodd" clipRule="evenodd" d="M7.9996 10.7312L4.234 6.96558L5.3652 5.83438L7.9996 8.46878L10.634 5.83438L11.7652 6.96558L7.9996 10.7312ZM7.99961 1.59998C4.46521 1.59998 1.59961 4.46478 1.59961 7.99998C1.59961 11.5344 4.46521 14.4 7.99961 14.4C11.534 14.4 14.3996 11.5344 14.3996 7.99998C14.3996 4.46478 11.534 1.59998 7.99961 1.59998Z" fill="white"/>
+                    <p>
+                      Virtual Card
+                      <svg
+                        className="ml-4 inline-block"
+                        width="16"
+                        height="16"
+                        viewBox="0 0 16 16"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          fillRule="evenodd"
+                          clipRule="evenodd"
+                          d="M7.9996 10.7312L4.234 6.96558L5.3652 5.83438L7.9996 8.46878L10.634 5.83438L11.7652 6.96558L7.9996 10.7312ZM7.99961 1.59998C4.46521 1.59998 1.59961 4.46478 1.59961 7.99998C1.59961 11.5344 4.46521 14.4 7.99961 14.4C11.534 14.4 14.3996 11.5344 14.3996 7.99998C14.3996 4.46478 11.534 1.59998 7.99961 1.59998Z"
+                          fill="#C0CCDA"
+                        />
+                        <mask
+                          id="mask0"
+                          style={{ maskType: "alpha" }}
+                          maskUnits="userSpaceOnUse"
+                          x="1"
+                          y="1"
+                          width="14"
+                          height="14"
+                        >
+                          <path
+                            fillRule="evenodd"
+                            clipRule="evenodd"
+                            d="M7.9996 10.7312L4.234 6.96558L5.3652 5.83438L7.9996 8.46878L10.634 5.83438L11.7652 6.96558L7.9996 10.7312ZM7.99961 1.59998C4.46521 1.59998 1.59961 4.46478 1.59961 7.99998C1.59961 11.5344 4.46521 14.4 7.99961 14.4C11.534 14.4 14.3996 11.5344 14.3996 7.99998C14.3996 4.46478 11.534 1.59998 7.99961 1.59998Z"
+                            fill="white"
+                          />
                         </mask>
-                        <g mask="url(#mask0)">
-                        </g>
+                        <g mask="url(#mask0)"></g>
                       </svg>
-
                     </p>
                     <span>Lorem Ipsum dolor sit amet</span>
                   </div>
@@ -97,7 +159,7 @@ export default function Cards() {
               </div>
               <div className="virtual-card__select">
                 {/* virtual card  */}
-                <VirtualCard/>
+                <VirtualCard />
               </div>
               <div className="virtual-card__details  flex justify-between wrap">
                 <div className="virtual-card__details__content">
@@ -115,10 +177,24 @@ export default function Cards() {
                   </div>
                   <div className="virtual-card__details__item grid justify-between">
                     <p>Billing Address:</p>
-                    <p className="value">Patricia HQ, SA 109827
-                      <svg className="inline-block ml-2" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M3 8.75C3 5.57 5.57 3 8.75 3H15.76C16.17 3 16.51 3.34 16.51 3.75C16.51 4.16 16.17 4.5 15.76 4.5H8.75C6.4 4.5 4.5 6.4 4.5 8.75V15.86C4.5 16.27 4.16 16.61 3.75 16.61C3.34 16.61 3 16.27 3 15.86V8.75Z" fill="#9DA8B6"/>
-                        <path d="M18.1502 6.53999C14.9102 6.17999 11.5902 6.17999 8.34016 6.53999C7.42016 6.64999 6.68016 7.36999 6.57016 8.29999C6.19016 11.59 6.19016 14.91 6.57016 18.19C6.68016 19.12 7.42016 19.85 8.34016 19.95C11.5802 20.31 14.9002 20.31 18.1502 19.95C19.0702 19.85 19.8202 19.12 19.9202 18.19C20.3002 14.9 20.3002 11.58 19.9202 8.29999C19.8202 7.36999 19.0802 6.64999 18.1502 6.53999Z" fill="#9DA8B6"/>
+                    <p className="value">
+                      Patricia HQ, SA 109827
+                      <svg
+                        className="inline-block ml-2"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                      >
+                        <path
+                          d="M3 8.75C3 5.57 5.57 3 8.75 3H15.76C16.17 3 16.51 3.34 16.51 3.75C16.51 4.16 16.17 4.5 15.76 4.5H8.75C6.4 4.5 4.5 6.4 4.5 8.75V15.86C4.5 16.27 4.16 16.61 3.75 16.61C3.34 16.61 3 16.27 3 15.86V8.75Z"
+                          fill="#9DA8B6"
+                        />
+                        <path
+                          d="M18.1502 6.53999C14.9102 6.17999 11.5902 6.17999 8.34016 6.53999C7.42016 6.64999 6.68016 7.36999 6.57016 8.29999C6.19016 11.59 6.19016 14.91 6.57016 18.19C6.68016 19.12 7.42016 19.85 8.34016 19.95C11.5802 20.31 14.9002 20.31 18.1502 19.95C19.0702 19.85 19.8202 19.12 19.9202 18.19C20.3002 14.9 20.3002 11.58 19.9202 8.29999C19.8202 7.36999 19.0802 6.64999 18.1502 6.53999Z"
+                          fill="#9DA8B6"
+                        />
                       </svg>
                     </p>
                   </div>
@@ -135,11 +211,11 @@ export default function Cards() {
           </div>
           <div className="card-page-side">
             <div className="page-side-content">
-              <CardActivities/>
+              <CardActivities />
             </div>
           </div>
         </main>
       </div>
     </>
-  )
+  );
 }
