@@ -2,7 +2,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 1. Dashboard [click here](https://dashboard-git-main-ezejioforcosmas-gmailcom.vercel.app/),
 
-2. Card page[click here](https://dashboard-git-main-ezejioforcosmas-gmailcom.vercel.app/cards)
+2. Card page [click here](https://dashboard-git-main-ezejioforcosmas-gmailcom.vercel.app/cards)
 
 ## Getting Started
 
